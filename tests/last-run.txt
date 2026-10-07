@@ -1,0 +1,50 @@
+PASS manifest has fetch time: celestrak-stations :: 2026-10-07T19:26:03-04:00
+PASS manifest has fetch time: celestrak-visual :: 2026-10-07T19:26:03-04:00
+PASS manifest has fetch time: celestrak-last-30-days :: 2026-10-07T19:26:03-04:00
+PASS manifest has fetch time: weather-gov-points :: 2026-10-07T19:26:04-04:00
+PASS manifest has fetch time: weather-gov-forecast :: 2026-10-07T19:26:04-04:00
+PASS manifest has fetch time: weather-gov-grid :: 2026-10-07T19:26:04-04:00
+PASS manifest has fetch time: usno-rstt-today :: 2026-10-07T19:26:05-04:00
+PASS manifest has fetch time: jpl-de421 :: 2026-10-07T19:12:19-04:00
+PASS manifest has fetch time: celestrak-starlink (via starlink-globe cache) :: 2026-10-07T18:28:40-04:00
+PASS 4 nights computed
+PASS no NaN/Infinity in sky.json
+PASS sunset 2026-10-07 skyfield 18:39:44 vs ephem 18:39:44 :: 1s apart
+PASS civil dusk 2026-10-07 vs ephem 19:06:25 :: 1s apart
+PASS sunset 2026-10-08 skyfield 18:38:13 vs ephem 18:38:13 :: 0s apart
+PASS civil dusk 2026-10-08 vs ephem 19:04:55 :: 0s apart
+PASS sunset 2026-10-09 skyfield 18:36:41 vs ephem 18:36:42 :: 1s apart
+PASS civil dusk 2026-10-09 vs ephem 19:03:25 :: 0s apart
+PASS sunset 2026-10-10 skyfield 18:35:11 vs ephem 18:35:11 :: 1s apart
+PASS civil dusk 2026-10-10 vs ephem 19:01:56 :: 0s apart
+PASS sunset today vs US Naval Observatory API (18:40  DT) :: page 18:39:44, 16s from USNO's rounded minute
+PASS civil_dusk today vs US Naval Observatory API (19:06  DT) :: page 19:06:25, 25s from USNO's rounded minute
+PASS moon phase name matches USNO :: Waning Crescent vs Waning Crescent
+PASS moonrise 2026-10-07 vs ephem :: 0s apart
+PASS moonset 2026-10-07 vs ephem :: 1s apart
+PASS moonrise 2026-10-08 vs ephem :: 1s apart
+PASS moonset 2026-10-08 vs ephem :: 1s apart
+PASS moonrise 2026-10-09 vs ephem :: 1s apart
+PASS moonset 2026-10-09 vs ephem :: 1s apart
+PASS moonrise 2026-10-10 vs ephem :: 1s apart
+PASS moonset 2026-10-10 vs ephem :: 0s apart
+PASS Mars alt/az at 21:00 vs ephem :: page -30.7,7.2 vs ephem -30.7,7.2
+PASS Jupiter alt/az at 21:00 vs ephem :: page -35.2,350.1 vs ephem -35.2,350.1
+PASS Saturn alt/az at 21:00 vs ephem :: page 26.9,111.4 vs ephem 26.9,111.4
+PASS at least one visible space-station pass computed :: 6
+PASS ISS pass Sun 06:35:08 vs PyEphem SGP4 :: rise 1s, peak 1s, set 1s apart; peak alt ephem 11.5 deg vs page 11.48 deg
+PASS Tiangong pass Thu 05:52:05 vs PyEphem SGP4 :: rise 1s, peak 1s, set 0s apart; peak alt ephem 52.8 deg vs page 52.84 deg
+PASS Tiangong pass Fri 04:52:54 vs PyEphem SGP4 :: rise 1s, peak 1s, set 0s apart; peak alt ephem 52.1 deg vs page 52.12 deg
+PASS Tiangong pass Fri 06:29:53 vs PyEphem SGP4 :: rise 0s, peak 0s, set 0s apart; peak alt ephem 81.4 deg vs page 81.39 deg
+PASS Tiangong pass Sat 05:30:43 vs PyEphem SGP4 :: rise 1s, peak 0s, set 0s apart; peak alt ephem 61.9 deg vs page 61.91 deg
+PASS Tiangong pass Sun 06:08:25 vs PyEphem SGP4 :: rise 1s, peak 0s, set 0s apart; peak alt ephem 66.1 deg vs page 66.09 deg
+PASS server on :4268 serves the page with data
+PASS [server] no JavaScript errors :: []
+PASS [server] page ready, moments + 4 night tabs rendered :: moments=9 tabs=4
+PASS [server] sky dome drawn and animates :: pixels=8902 minute=77.4088666666667
+PASS [snapshot] no JavaScript errors :: []
+PASS [snapshot] page ready, moments + 4 night tabs rendered :: moments=9 tabs=4
+PASS [snapshot] sky dome drawn and animates :: pixels=8902 minute=76.34425000000003
+PASS dome star math (Vega, JS) vs ephem :: JS 62.33,280.92 vs ephem 62.51,280.90
+PASS snapshot is self-contained (no external src/href)
+49/49 checks passed at 2026-10-07T19:28:10-04:00

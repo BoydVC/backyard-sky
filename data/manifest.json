@@ -1,0 +1,89 @@
+{
+ "sources": {
+  "celestrak-stations": {
+   "url": "http://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle",
+   "file": "stations.tle",
+   "note": "Space stations (ISS, Tiangong) two-line elements. Plain HTTP because HTTPS to CelesTrak fails the TLS handshake from this box.",
+   "fetched_at": "2026-10-07T19:26:03-04:00",
+   "bytes": 3360,
+   "sha256": "629a6a6925f1be09",
+   "status": "ok"
+  },
+  "celestrak-visual": {
+   "url": "http://celestrak.org/NORAD/elements/gp.php?GROUP=visual&FORMAT=tle",
+   "file": "visual.tle",
+   "note": "CelesTrak '100 (or so) brightest' satellites.",
+   "fetched_at": "2026-10-07T19:26:03-04:00",
+   "bytes": 26208,
+   "sha256": "ccef4403c710f38f",
+   "status": "ok"
+  },
+  "celestrak-last-30-days": {
+   "url": "http://celestrak.org/NORAD/elements/gp.php?GROUP=last-30-days&FORMAT=json",
+   "file": "last30.json",
+   "note": "Objects launched in the last 30 days (used to find fresh Starlink batches = 'trains').",
+   "fetched_at": "2026-10-07T19:26:03-04:00",
+   "bytes": 90126,
+   "sha256": "0888e32c4d6e4411",
+   "status": "ok"
+  },
+  "weather-gov-points": {
+   "url": "https://api.weather.gov/points/39.06,-76.65",
+   "file": "points.json",
+   "note": "NWS grid lookup for the town-center point.",
+   "fetched_at": "2026-10-07T19:26:04-04:00",
+   "bytes": 3922,
+   "sha256": "a03ab56f3c453564",
+   "status": "ok"
+  },
+  "weather-gov-forecast": {
+   "url": "https://api.weather.gov/gridpoints/LWX/109,80/forecast",
+   "file": "forecast.json",
+   "note": "NWS 7-day text forecast (12-hour periods).",
+   "fetched_at": "2026-10-07T19:26:04-04:00",
+   "bytes": 13149,
+   "sha256": "33f139ea2e413ac0",
+   "status": "ok"
+  },
+  "weather-gov-grid": {
+   "url": "https://api.weather.gov/gridpoints/LWX/109,80",
+   "file": "grid.json",
+   "note": "NWS raw gridded forecast (skyCover % by hour).",
+   "fetched_at": "2026-10-07T19:26:04-04:00",
+   "bytes": 177894,
+   "sha256": "dc9a4bf60fc0d806",
+   "status": "ok"
+  },
+  "usno-rstt-today": {
+   "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-10-07&coords=39.06,-76.65&tz=-5&dst=true",
+   "file": "usno.json",
+   "note": "US Naval Observatory sun/moon rise-set, used only as an independent cross-check.",
+   "fetched_at": "2026-10-07T19:26:05-04:00",
+   "bytes": 1301,
+   "sha256": "98efdca43b3642fd",
+   "status": "ok"
+  },
+  "jpl-de421": {
+   "url": "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp",
+   "file": "de421.bsp",
+   "note": "JPL DE421 planetary ephemeris (valid 1900-2050). Downloaded once.",
+   "bytes": 16788480,
+   "fetched_at": "2026-10-07T19:12:19-04:00"
+  },
+  "celestrak-starlink (via starlink-globe cache)": {
+   "url": "http://celestrak.org/NORAD/elements/gp.php?GROUP=starlink&FORMAT=json",
+   "file": "starlink-omm.json",
+   "fetched_at": "2026-10-07T18:28:40-04:00",
+   "count": 11110,
+   "note": "Full Starlink element set fetched earlier tonight by the Starlink Globe project; copied here. Used to cross-check the fresh last-30-days Starlink elements.",
+   "status": "ok (copied)"
+  }
+ },
+ "location": {
+  "lat": 39.06,
+  "lon": -76.65,
+  "label": "Millersville, MD (town center, not a street address)",
+  "elevation_m": 30
+ },
+ "updated_at": "2026-10-07T19:26:05-04:00"
+}
