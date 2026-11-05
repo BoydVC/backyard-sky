@@ -1,6 +1,6 @@
 # Backyard Sky Tonight
 
-A dark-mode sky guide for Boyd, Char (13) and Vic (11): what's up tonight and the next three nights from the backyard in
+A dark-mode sky guide for Boyd, Alex (13) and Sam (11): what's up tonight and the next three nights from the backyard in
 **Millersville, MD**. The page uses a town-center point (39.06° N, 76.65° W, about 30 m elevation), not the street address. All times are Eastern.
 
 * **Live:** `nohup ./run.sh &` → http://127.0.0.1:4268/ (refetches data, recomputes, rebuilds, then serves)
