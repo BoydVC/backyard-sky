@@ -47,7 +47,7 @@ if os.path.exists(os.path.join(sg, "starlink-omm.json")):
     shutil.copy(os.path.join(sg, "starlink-omm.json"), os.path.join(D, "starlink-omm.json"))
     man["sources"]["celestrak-starlink (via starlink-globe cache)"] = dict(url=meta["url"], file="starlink-omm.json", fetched_at=meta["fetched_at"], count=meta["count"],
         note="Full Starlink element set fetched earlier tonight by the Starlink Globe project; copied here. Used to cross-check the fresh last-30-days Starlink elements.", status="ok (copied)")
-man["location"] = dict(lat=LAT, lon=LON, label="Millersville, MD (town center, not a street address)", elevation_m=30)
+man["location"] = dict(lat=LAT, lon=LON, label="Lakeside, MD (town center, not a street address)", elevation_m=30)
 man["updated_at"] = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
 json.dump(man, open(man_path, "w"), indent=1)
 print("manifest written")

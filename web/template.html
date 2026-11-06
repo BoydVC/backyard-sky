@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="data:,"><title>Backyard Sky Tonight · Millersville, MD</title>
+<link rel="icon" href="data:,"><title>Backyard Sky Tonight · Lakeside, MD</title>
 <style>
 :root{--bg:#060a16;--card:#0e1528;--card2:#121b33;--ink:#e7ecf7;--dim:#93a0bd;--acc:#ffd36b;--acc2:#7cc4ff;--good:#7be3a4;--red:#ff8a7a;--line:#1f2b48}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -55,7 +55,7 @@ footer{margin-top:22px;color:var(--dim);font-size:13px}footer li{margin:3px 0}
 <body><div class="wrap">
 <header>
  <div><h1>🔭 Backyard Sky <span>Tonight</span></h1>
- <div class="sub">Millersville, MD · for Boyd, Alex &amp; Sam · all times Eastern</div></div>
+ <div class="sub">Lakeside, MD · for Alex, Alex &amp; Sam · all times Eastern</div></div>
  <div class="now" id="now"></div>
 </header>
 <div class="tabs" id="tabs"></div>
@@ -237,7 +237,7 @@ function renderSats() { const sp = SKY.station_passes.slice().sort((a, b) => a.v
   $("iss").innerHTML = sp.length ? `<table><tr><th>When</th><th>What</th><th>Path</th><th>Length</th></tr>${sp.map(passRow).join("")}</table><div class="hint" style="margin-top:6px">${sp.some((p) => p.name.startsWith("ISS")) ? "" : "No visible ISS passes in this window. "}Only passes where the station is sunlit while your sky is dark (Sun more than 6° down) and it climbs above 10°.</div>` : '<div class="hint">No visible space-station passes in the next 4 nights.</div>';
   const tr = SKY.starlink_trains;
   $("trains").innerHTML = tr.length ? `<table>${tr.map((t) => `<tr><td>${fmtDay.format(new Date(t.start))} <b>${T(t.start)}</b></td><td>${t.launch}: up to ${t.peak_count} at once, ${t.start_dir} → ${t.end_dir}, until ${T(t.end)}</td></tr>`).join("")}</table>` :
-    `<div style="font-size:14.5px">No Starlink train is predicted to be visible from Millersville in the next 4 nights.</div><div class="hint">Checked the ${SKY.starlink_groups.length} Starlink batches launched in the last 30 days (${SKY.starlink_groups.map((g) => `${g.launch}: ${g.count} satellites, ${g.alt_km_min}–${g.alt_km_max} km up`).join("; ")}). Their passes over us happen while they're in Earth's shadow, so they won't light up. A train needs 5+ sunlit satellites above 15° while it's dark.</div>`;
+    `<div style="font-size:14.5px">No Starlink train is predicted to be visible from Lakeside in the next 4 nights.</div><div class="hint">Checked the ${SKY.starlink_groups.length} Starlink batches launched in the last 30 days (${SKY.starlink_groups.map((g) => `${g.launch}: ${g.count} satellites, ${g.alt_km_min}–${g.alt_km_max} km up`).join("; ")}). Their passes over us happen while they're in Earth's shadow, so they won't light up. A train needs 5+ sunlit satellites above 15° while it's dark.</div>`;
   const b = brightThisNight(); $("bright").innerHTML = b.length ? `<table>${b.map(passRow).join("")}</table><div class="hint">From CelesTrak's “brightest satellites” list; passes reaching 60°+ for 2+ minutes. Many are old rocket bodies. Brightness not estimated.</div>` : '<div class="hint">None high enough this night.</div>'; }
 function renderNow() { const n = nowDate(); $("now").innerHTML = `<b>${fmt.format(n)}</b><br>${fmtDay.format(n)} · data from ${fmtDay.format(new Date(SKY.generated_at))} ${T(SKY.generated_at)}`; }
 function renderSources() { $("sources").innerHTML = Object.entries(SKY.sources).map(([k, v]) => `<li><b>${esc(k)}</b> fetched ${v.fetched_at ? fmtDay.format(new Date(v.fetched_at)) + " " + T(v.fetched_at) : "?"} ET <span class="hint">${esc(v.url || "")}</span></li>`).join("") +
