@@ -1,7 +1,7 @@
 # Backyard Sky Tonight
 
-A dark-mode sky guide for Boyd, Alex (13) and Sam (11): what's up tonight and the next three nights from the backyard in
-**Millersville, MD**. The page uses a town-center point (39.06° N, 76.65° W, about 30 m elevation), not the street address. All times are Eastern.
+A dark-mode sky guide for Alex, Alex (13) and Sam (11): what's up tonight and the next three nights from the backyard in
+**Lakeside, MD**. The page uses a town-center point (39.06° N, 76.65° W, about 30 m elevation), not the street address. All times are Eastern.
 
 * **Live:** `nohup ./run.sh &` → http://127.0.0.1:4268/ (refetches data, recomputes, rebuilds, then serves)
 * **Offline:** `dist/backyard-sky-snapshot.html` is a single file with everything inlined (no internet needed)
@@ -24,7 +24,7 @@ A dark-mode sky guide for Boyd, Alex (13) and Sam (11): what's up tonight and th
 | Sun, Moon, planets | **skyfield 1.55** with **JPL DE421** ephemeris (`data/de421.bsp`) | Accurate to well under a second of time for rise and set. Rise and set use the standard −0.8333° horizon (refraction plus the Sun's or Moon's radius). Your actual horizon (trees, houses) will differ. |
 | Space stations | **CelesTrak** `GROUP=stations` TLEs, propagated with SGP4 (skyfield) | A pass counts as visible when the station is sunlit, is more than 10° up, and the Sun is more than 6° below the horizon. Elements age: re-run daily, and ISS times can shift after a re-boost. Brightness is an **estimate** from a standard formula (−1.8 for ISS and −0.8 for Tiangong at 1000 km, plus a phase factor). |
 | Bright satellites | **CelesTrak** `GROUP=visual` | Only passes reaching 60° or more for at least 2 minutes are listed, with up to 3 in the "go outside" list per night. No brightness estimate (it varies a lot, especially for tumbling rocket bodies). |
-| Starlink trains | **CelesTrak** `GROUP=last-30-days` (Starlink objects), cross-checked with the full Starlink set cached by `../starlink-globe` (fetched 6:28 PM ET) | A train means 5 or more satellites from one fresh launch that are sunlit, above 15°, and in a dark sky at the same moment. As of this run, **no train is visible from Millersville in the next 4 nights**. Both fresh batches (2026-219 at about 340–366 km and 2026-225 at about 296–316 km) pass over in Earth's shadow. Batch 2026-225 wasn't in the earlier Starlink cache yet, so the last-30-days file is the one used. Real trains can still be dimmer than predicted. |
+| Starlink trains | **CelesTrak** `GROUP=last-30-days` (Starlink objects), cross-checked with the full Starlink set cached by `../starlink-globe` (fetched 6:28 PM ET) | A train means 5 or more satellites from one fresh launch that are sunlit, above 15°, and in a dark sky at the same moment. As of this run, **no train is visible from Lakeside in the next 4 nights**. Both fresh batches (2026-219 at about 340–366 km and 2026-225 at about 296–316 km) pass over in Earth's shadow. Batch 2026-225 wasn't in the earlier Starlink cache yet, so the last-30-days file is the one used. Real trains can still be dimmer than predicted. |
 | Bright stars | PyEphem's built-in catalog (stars of magnitude 3.2 or brighter) | The dome computes star positions in JavaScript from J2000 coordinates (precession of about 0.4° is ignored). Good enough to find things by eye. |
 | Clouds | **api.weather.gov** (NWS LWX grid 109,80): `skyCover` grid and the 7-day forecast | This is a forecast, not an observation, and it only covers what NWS publishes. The page doesn't cover haze, light pollution or the actual horizon. |
 | Cross-check only | **US Naval Observatory** API `rstt/oneday` (today) | Used by the smoke test as an independent source for sunset, civil twilight and Moon phase. |
@@ -45,7 +45,7 @@ Plain HTTP is used for CelesTrak because HTTPS to celestrak.org fails the TLS ha
 
 ---
 ## Repo notes
-- **Built:** Oct 2026 (TokenMax build week; see SHORTLIST/ledger), by TokenMax (Boyd's Grok Bot) on the Grok Bot box.
+- **Built:** Oct 2026 (TokenMax build week; see SHORTLIST/ledger), by TokenMax (Alex's Grok Bot) on the Grok Bot box.
 - **Run:** `./run.sh` (then open the localhost URL it prints).
 - Imported from `/workspace/tokenmax/backyard-sky` on Oct 23, 2026. node_modules, virtualenvs, logs and files over 20 MB were left out.
 - Personal details (emails, phone numbers, home street address) were replaced with `[redacted-…]` placeholders.

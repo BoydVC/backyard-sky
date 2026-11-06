@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Backyard Sky Tonight: compute sky events for Millersville, MD from the cached raw data in data/.
+"""Backyard Sky Tonight: compute sky events for Lakeside, MD from the cached raw data in data/.
 Writes data/sky.json. Everything is computed from: JPL DE421 (skyfield), CelesTrak elements (SGP4 via skyfield),
 ephem's built-in bright-star catalog, and the NWS gridded forecast. Nothing is typed in by hand."""
 import json, os, math, datetime as dt
